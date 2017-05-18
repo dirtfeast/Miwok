@@ -32,9 +32,15 @@
         <activity
             android:name=".NumbersActivity"
             android:label="@string/label_numbers" />
-        <activity android:name=".FamilyMembersActivity" />
-        <activity android:name=".ColorsActivity" />
-        <activity android:name=".PhrasesActivity" />
+        <activity
+            android:name=".FamilyMembersActivity"
+            android:label="@string/label_family" />
+        <activity
+            android:name=".ColorsActivity"
+            android:label="@string/label_colors" />
+        <activity
+            android:name=".PhrasesActivity"
+            android:label="@string/label_phrases" />
     </application>
 
 </manifest>

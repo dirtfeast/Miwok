@@ -29,7 +29,9 @@
     <string name="category_family">Family Members</string>
 
     <!-- Activity Labels -->
-
-    <!-- Label for NumbersActivity -->
     <string name="label_numbers">Miwok - Numbers</string>
+    <string name="label_family">Miwok - Family Members</string>
+    <string name="label_colors">Miwok - Colors</string>
+    <string name="label_phrases">Miwok - Phrases</string>
+
 </resources>
