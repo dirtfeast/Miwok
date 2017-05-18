@@ -27,4 +27,9 @@
 
     <!-- Category name for the vocabulary words for family members [CHAR LIMIT=20] -->
     <string name="category_family">Family Members</string>
+
+    <!-- Activity Labels -->
+
+    <!-- Label for NumbersActivity -->
+    <string name="label_numbers">Miwok - Numbers</string>
 </resources>
