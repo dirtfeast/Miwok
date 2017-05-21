@@ -19,17 +19,19 @@ public class NumbersActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_numbers);
 
-        ArrayList<String> miwokWords = new ArrayList<String>();
-        miwokWords.add("One");
-        miwokWords.add("Two");
-        miwokWords.add("Three");
-        miwokWords.add("Four");
-        miwokWords.add("Five");
-        miwokWords.add("Six");
-        miwokWords.add("Seven");
-        miwokWords.add("Eight");
-        miwokWords.add("Nine");
-        miwokWords.add("Ten");
+        // ArrayList of miwoWords objects
+        // Define English and Miwok words
+        ArrayList<Word> miwokWords = new ArrayList<Word>();
+        miwokWords.add(new Word("One", "lutti"));
+        miwokWords.add(new Word("Two", "otiiko"));
+        miwokWords.add(new Word("Three", "tolookosu"));
+        miwokWords.add(new Word("Four", "oyyisa"));
+        miwokWords.add(new Word("Five", "massokka"));
+        miwokWords.add(new Word("Six", "temmokka"));
+        miwokWords.add(new Word("Seven", "kenekaku"));
+        miwokWords.add(new Word("Eight", "kawinta"));
+        miwokWords.add(new Word("Nine", "wo’e"));
+        miwokWords.add(new Word("Ten", "na’aacha"));
 
         // Locate root LinearLayout in activity_numbers.xml
         // LinearLayout rootView = (LinearLayout) findViewById(R.id.rootView);
@@ -37,9 +39,19 @@ public class NumbersActivity extends AppCompatActivity {
         // Add sub TextView to the root LinearLayout for each element
         // ArrayAdapter manages view recycling
         // Set text of each view
-        ArrayAdapter<String> itemsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, miwokWords);
+
+        // Custom WordAdapter class overrides ArrayAdapter
+        // Pass context and object
+        WordAdapter adapter = new WordAdapter(this, miwokWords);
+
+        // Find the ListView object in the view hierarchy of the Activity
+        // There should be a {@link ListView} with the view ID called list,
+        // which is declared in the activity_numbers.xml layout file
         ListView listView = (ListView) findViewById(R.id.list);
-        listView.setAdapter(itemsAdapter);
+
+        // Make the ListView use the WordAdapter we created above, so that the
+        // ListView will display list items for each Word object in the list.
+        listView.setAdapter(adapter);
 
     } // Close method onCreate()
 } // Close class NumbersActivity
