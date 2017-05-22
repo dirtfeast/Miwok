@@ -13,10 +13,6 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by DanW on 5/21/2017.
- */
-
 public class WordAdapter extends ArrayAdapter<Word> {
 
     // @param context    The current context. Used to inflate the layout file.
@@ -61,11 +57,16 @@ public class WordAdapter extends ArrayAdapter<Word> {
         englishTextView.setText(currentWord.getmEnglishWord());
 
         // Find the ImageView in the list_item.xml layout with the ID list_item_icon
-//        ImageView iconView = (ImageView) listItemView.findViewById(R.id.list_item_icon);
+        ImageView iconView = (ImageView) listItemView.findViewById(R.id.list_item_icon);
 
-        // Get the image resource ID from the current Word object and
-        // set the image to iconView
-//        iconView.setImageResource(currentWord.getImageResourceId());
+        if (currentWord.getmImageResourceId() != 0) {
+
+            // Get the image resource ID from the current Word object and
+            // set the image to iconView
+            iconView.setImageResource(currentWord.getmImageResourceId());
+        } else {
+            iconView.setVisibility(View.GONE);
+        }
 
         // Return the whole list item layout (containing 2 TextViews and an ImageView)
         // so that it can be shown in the ListView
