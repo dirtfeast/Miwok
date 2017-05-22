@@ -1,9 +1,5 @@
 package com.example.android.miwok;
 
-/**
- * Created by DanW on 5/21/2017.
- */
-
 public class Word {
 
     private String mMiwokWord;

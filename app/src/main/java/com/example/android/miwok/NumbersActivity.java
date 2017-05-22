@@ -1,14 +1,8 @@
 package com.example.android.miwok;
 
-import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutCompat;
-import android.util.Log;
-import android.widget.ArrayAdapter;
-import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -17,7 +11,7 @@ public class NumbersActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_numbers);
+        setContentView(R.layout.word_list);
 
         // ArrayList of miwoWords objects
         // Define English and Miwok words
@@ -33,8 +27,7 @@ public class NumbersActivity extends AppCompatActivity {
         miwokWords.add(new Word("Nine", "wo’e"));
         miwokWords.add(new Word("Ten", "na’aacha"));
 
-        // Locate root LinearLayout in activity_numbers.xml
-        // LinearLayout rootView = (LinearLayout) findViewById(R.id.rootView);
+        // Locate root LinearLayout in word_list      // LinearLayout rootView = (LinearLayout) findViewById(R.id.rootView);
 
         // Add sub TextView to the root LinearLayout for each element
         // ArrayAdapter manages view recycling
@@ -46,7 +39,7 @@ public class NumbersActivity extends AppCompatActivity {
 
         // Find the ListView object in the view hierarchy of the Activity
         // There should be a {@link ListView} with the view ID called list,
-        // which is declared in the activity_numbers.xml layout file
+        // which is declared in the word_list.xml file
         ListView listView = (ListView) findViewById(R.id.list);
 
         // Make the ListView use the WordAdapter we created above, so that the

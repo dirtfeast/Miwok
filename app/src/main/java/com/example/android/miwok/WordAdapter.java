@@ -11,24 +11,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by DanW on 5/21/2017.
  */
 
-// Custom override of the getView() method
 public class WordAdapter extends ArrayAdapter<Word> {
 
-    private static final String LOG_TAG = WordAdapter.class.getSimpleName();
-
-    /**
-     * This is our own custom constructor (it doesn't mirror a superclass constructor).
-     * The context is used to inflate the layout file, and the list is the data we want
-     * to populate into the lists.
-     *
-     * @param context        The current context. Used to inflate the layout file.
-     * @param miwokWords A List of AndroidFlavor objects to display in a list
-     */
+    // @param context    The current context. Used to inflate the layout file.
+    // @param miwokWords A List of Word objects to display in a list
     public WordAdapter(Activity context, ArrayList<Word> miwokWords) {
         // Here, we initialize the ArrayAdapter's internal storage for the context and the list.
         // the second argument is used when the ArrayAdapter is populating a single TextView.
@@ -39,38 +31,39 @@ public class WordAdapter extends ArrayAdapter<Word> {
         // ArrayAdapter(Context context, int resource, List<T> objects)
         super(context, 0, miwokWords);
     }
+
     @NonNull
     @Override
+    // Custom override of the getView() method
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-//        return super.getView(position, convertView, parent);
 
-        // Check if the existing view is being reused, otherwise inflate the view
+        // Check if the existing view is being recycled, otherwise inflate the view
         // Important, for example, when you start app and there are no recyclable views yet
         View listItemView = convertView;
-        if(listItemView == null) {
+        if (listItemView == null) {
             listItemView = LayoutInflater.from(getContext()).inflate(R.layout.list_item, parent, false);
-            }
+        }
 
         // Get the Word object located at this position in the list
         // getItem() is a method within ArrayAdapter superclass
         Word currentWord = getItem(position);
 
-        // Find the TextView in the list_item.xml layout with the ID version_name
-        TextView nameTextView = (TextView) listItemView.findViewById(R.id.numbers_miwok);
-        // Get the version name from the current AndroidFlavor object and
+        // Find the TextView in the list_item.xml layout with the ID word_miwok
+        TextView miwokTextView = (TextView) listItemView.findViewById(R.id.word_miwok);
+        // Get the Miwok word from the current Word object and
         // set this text on the name TextView
-        nameTextView.setText(currentWord.getmMiwokWord());
+        miwokTextView.setText(currentWord.getmMiwokWord());
 
-        // Find the TextView in the list_item.xml layout with the ID version_number
-        TextView numberTextView = (TextView) listItemView.findViewById(R.id.numbers_english);
+        // Find the TextView in the list_item.xml layout with the ID word_englis
+        TextView englishTextView = (TextView) listItemView.findViewById(R.id.word_english);
         // Get the version number from the current AndroidFlavor object and
         // set this text on the number TextView
-        numberTextView.setText(currentWord.getmEnglishWord());
+        englishTextView.setText(currentWord.getmEnglishWord());
 
         // Find the ImageView in the list_item.xml layout with the ID list_item_icon
 //        ImageView iconView = (ImageView) listItemView.findViewById(R.id.list_item_icon);
 
-        // Get the image resource ID from the current AndroidFlavor object and
+        // Get the image resource ID from the current Word object and
         // set the image to iconView
 //        iconView.setImageResource(currentWord.getImageResourceId());
 

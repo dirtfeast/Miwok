@@ -11,13 +11,13 @@
     android:paddingTop="16dp">
 
     <TextView
-        android:id="@+id/numbers_miwok"
+        android:id="@+id/word_miwok"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tool:text="Miwok" />
 
     <TextView
-        android:id="@+id/numbers_english"
+        android:id="@+id/word_english"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tool:text="English" />
