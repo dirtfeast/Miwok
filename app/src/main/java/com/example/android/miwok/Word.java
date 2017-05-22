@@ -4,6 +4,7 @@ public class Word {
 
     private String mMiwokWord;
     private String mEnglishWord;
+    private int mImageResourceId;
 
     // Constructor setter method
     // @params strings miwokWord and englishWord
@@ -11,6 +12,12 @@ public class Word {
     public Word(String miwokWord, String englishWord) {
         mMiwokWord = miwokWord;
         mEnglishWord = englishWord;
+    } // Close method Word()
+
+    public Word(String miwokWord, String englishWord, int imageResourceId) {
+        mMiwokWord = miwokWord;
+        mEnglishWord = englishWord;
+        mImageResourceId = imageResourceId;
     } // Close method Word()
 
     // Getter method to retrieve private string mMiwokWord
@@ -22,5 +29,8 @@ public class Word {
     public String getmEnglishWord() {
         return mEnglishWord;
     }
+
+    // Getter method to retrieve private string mIcon;
+    public int getmImageResourceId() { return mImageResourceId; }
 
 } // Close class Word
