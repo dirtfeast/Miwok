@@ -16,14 +16,14 @@ public class ColorsActivity extends AppCompatActivity {
         // ArrayList of miwoWords objects
         // Define English and Miwok words
         ArrayList<Word> miwokWords = new ArrayList<Word>();
-        miwokWords.add(new Word("red", "weṭeṭṭi"));
-        miwokWords.add(new Word("green", "chokokki"));
-        miwokWords.add(new Word("brown", "ṭakaakki"));
-        miwokWords.add(new Word("gray", "ṭopoppi"));
-        miwokWords.add(new Word("black", "kululli"));
-        miwokWords.add(new Word("white", "kelelli"));
-        miwokWords.add(new Word("dusty yellow", "ṭopiisә"));
-        miwokWords.add(new Word("mustard yellow", "chiwiiṭә"));
+        miwokWords.add(new Word("red", "weṭeṭṭi", R.drawable.color_red));
+        miwokWords.add(new Word("green", "chokokki", R.drawable.color_green ));
+        miwokWords.add(new Word("brown", "ṭakaakki", R.drawable.color_brown));
+        miwokWords.add(new Word("gray", "ṭopoppi", R.drawable.color_gray));
+        miwokWords.add(new Word("black", "kululli", R.drawable.color_black));
+        miwokWords.add(new Word("white", "kelelli", R.drawable.color_white));
+        miwokWords.add(new Word("dusty yellow", "ṭopiisә", R.drawable.color_dusty_yellow));
+        miwokWords.add(new Word("mustard yellow", "chiwiiṭә", R.drawable.color_mustard_yellow));
 
         // Locate root LinearLayout in word_list
         // LinearLayout rootView = (LinearLayout) findViewById(R.id.rootView);
