@@ -16,16 +16,16 @@ public class FamilyMembersActivity extends AppCompatActivity {
         // ArrayList of miwoWords objects
         // Define English and Miwok words
         ArrayList<Word> miwokWords = new ArrayList<Word>();
-        miwokWords.add(new Word("One", "lutti"));
-        miwokWords.add(new Word("Two", "otiiko"));
-        miwokWords.add(new Word("Three", "tolookosu"));
-        miwokWords.add(new Word("Four", "oyyisa"));
-        miwokWords.add(new Word("Five", "massokka"));
-        miwokWords.add(new Word("Six", "temmokka"));
-        miwokWords.add(new Word("Seven", "kenekaku"));
-        miwokWords.add(new Word("Eight", "kawinta"));
-        miwokWords.add(new Word("Nine", "wo’e"));
-        miwokWords.add(new Word("Ten", "na’aacha"));
+        miwokWords.add(new Word("father", "әpә"));
+        miwokWords.add(new Word("mother", "әṭa"));
+        miwokWords.add(new Word("son", "angsi"));
+        miwokWords.add(new Word("daughter", "tune"));
+        miwokWords.add(new Word("older brother", "taachi"));
+        miwokWords.add(new Word("younger brother", "chalitti"));
+        miwokWords.add(new Word("older sister", "teṭe"));
+        miwokWords.add(new Word("younger sister", "kolliti"));
+        miwokWords.add(new Word("grandmother", "ama"));
+        miwokWords.add(new Word("grandfather", "paapa"));
 
         // Locate root LinearLayout in word_list      // LinearLayout rootView = (LinearLayout) findViewById(R.id.rootView);
 

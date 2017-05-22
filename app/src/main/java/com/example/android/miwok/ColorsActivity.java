@@ -16,18 +16,17 @@ public class ColorsActivity extends AppCompatActivity {
         // ArrayList of miwoWords objects
         // Define English and Miwok words
         ArrayList<Word> miwokWords = new ArrayList<Word>();
-        miwokWords.add(new Word("One", "lutti"));
-        miwokWords.add(new Word("Two", "otiiko"));
-        miwokWords.add(new Word("Three", "tolookosu"));
-        miwokWords.add(new Word("Four", "oyyisa"));
-        miwokWords.add(new Word("Five", "massokka"));
-        miwokWords.add(new Word("Six", "temmokka"));
-        miwokWords.add(new Word("Seven", "kenekaku"));
-        miwokWords.add(new Word("Eight", "kawinta"));
-        miwokWords.add(new Word("Nine", "wo’e"));
-        miwokWords.add(new Word("Ten", "na’aacha"));
+        miwokWords.add(new Word("red", "weṭeṭṭi"));
+        miwokWords.add(new Word("green", "chokokki"));
+        miwokWords.add(new Word("brown", "ṭakaakki"));
+        miwokWords.add(new Word("gray", "ṭopoppi"));
+        miwokWords.add(new Word("black", "kululli"));
+        miwokWords.add(new Word("white", "kelelli"));
+        miwokWords.add(new Word("dusty yellow", "ṭopiisә"));
+        miwokWords.add(new Word("mustard yellow", "chiwiiṭә"));
 
-        // Locate root LinearLayout in word_list      // LinearLayout rootView = (LinearLayout) findViewById(R.id.rootView);
+        // Locate root LinearLayout in word_list
+        // LinearLayout rootView = (LinearLayout) findViewById(R.id.rootView);
 
         // Add sub TextView to the root LinearLayout for each element
         // ArrayAdapter manages view recycling

@@ -16,18 +16,19 @@ public class PhrasesActivity extends AppCompatActivity {
         // ArrayList of miwoWords objects
         // Define English and Miwok words
         ArrayList<Word> miwokWords = new ArrayList<Word>();
-        miwokWords.add(new Word("One", "lutti"));
-        miwokWords.add(new Word("Two", "otiiko"));
-        miwokWords.add(new Word("Three", "tolookosu"));
-        miwokWords.add(new Word("Four", "oyyisa"));
-        miwokWords.add(new Word("Five", "massokka"));
-        miwokWords.add(new Word("Six", "temmokka"));
-        miwokWords.add(new Word("Seven", "kenekaku"));
-        miwokWords.add(new Word("Eight", "kawinta"));
-        miwokWords.add(new Word("Nine", "wo’e"));
-        miwokWords.add(new Word("Ten", "na’aacha"));
+        miwokWords.add(new Word("Where are you going?", "minto wuksus"));
+        miwokWords.add(new Word("What is your name?", "tinnә oyaase'nә"));
+        miwokWords.add(new Word("My name is...", "oyaaset..."));
+        miwokWords.add(new Word("How are you feeling?", "michәksәs?"));
+        miwokWords.add(new Word("I’m feeling good.", "kuchi achit"));
+        miwokWords.add(new Word("Are you coming?", "әәnәs'aa?"));
+        miwokWords.add(new Word("Yes, I’m coming.", "hәә’ әәnәm"));
+        miwokWords.add(new Word("I’m coming.", "әәnәm"));
+        miwokWords.add(new Word("Let’s go.", "yoowutis"));
+        miwokWords.add(new Word("Come here.", "әnni'nem"));
 
-        // Locate root LinearLayout in word_list      // LinearLayout rootView = (LinearLayout) findViewById(R.id.rootView);
+        // Locate root LinearLayout in word_list
+        // LinearLayout rootView = (LinearLayout) findViewById(R.id.rootView);
 
         // Add sub TextView to the root LinearLayout for each element
         // ArrayAdapter manages view recycling
