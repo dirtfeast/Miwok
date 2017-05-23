@@ -36,7 +36,7 @@ public class PhrasesActivity extends AppCompatActivity {
 
         // Custom WordAdapter class overrides ArrayAdapter
         // Pass context and object
-        WordAdapter adapter = new WordAdapter(this, miwokWords);
+        WordAdapter adapter = new WordAdapter(this, miwokWords, R.color.category_phrases);
 
         // Find the ListView object in the view hierarchy of the Activity
         // There should be a {@link ListView} with the view ID called list,
