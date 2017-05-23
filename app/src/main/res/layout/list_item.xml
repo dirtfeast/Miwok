@@ -15,6 +15,7 @@
         android:background="@color/tan_background" />
 
     <LinearLayout
+        android:id="@+id/category_color"
         android:layout_width="match_parent"
         android:layout_height="@dimen/list_item_height"
         android:orientation="vertical">
@@ -24,7 +25,6 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="@color/category_numbers"
             android:gravity="bottom"
             android:paddingLeft="16dp"
             android:textAppearance="?android:textAppearanceMedium"
@@ -38,7 +38,6 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="@color/category_numbers"
             android:gravity="top"
             android:paddingLeft="16dp"
             android:textAppearance="?android:textAppearanceMedium"
