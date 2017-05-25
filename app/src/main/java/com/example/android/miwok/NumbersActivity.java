@@ -16,16 +16,16 @@ public class NumbersActivity extends AppCompatActivity {
         // ArrayList of miwoWords objects
         // Define English and Miwok words
         ArrayList<Word> miwokWords = new ArrayList<Word>();
-        miwokWords.add(new Word("One", "lutti", R.drawable.number_one));
-        miwokWords.add(new Word("Two", "otiiko", R.drawable.number_two));
-        miwokWords.add(new Word("Three", "tolookosu", R.drawable.number_three));
-        miwokWords.add(new Word("Four", "oyyisa", R.drawable.number_four));
-        miwokWords.add(new Word("Five", "massokka", R.drawable.number_five));
-        miwokWords.add(new Word("Six", "temmokka", R.drawable.number_six));
-        miwokWords.add(new Word("Seven", "kenekaku", R.drawable.number_seven));
-        miwokWords.add(new Word("Eight", "kawinta", R.drawable.number_eight));
-        miwokWords.add(new Word("Nine", "wo’e", R.drawable.number_nine));
-        miwokWords.add(new Word("Ten", "na’aacha", R.drawable.number_ten));
+        miwokWords.add(new Word("One", "lutti", R.drawable.number_one, R.raw.number_one));
+        miwokWords.add(new Word("Two", "otiiko", R.drawable.number_two, R.raw.number_two));
+        miwokWords.add(new Word("Three", "tolookosu", R.drawable.number_three, R.raw.number_three));
+        miwokWords.add(new Word("Four", "oyyisa", R.drawable.number_four, R.raw.number_four));
+        miwokWords.add(new Word("Five", "massokka", R.drawable.number_five, R.raw.number_five));
+        miwokWords.add(new Word("Six", "temmokka", R.drawable.number_six, R.raw.number_six));
+        miwokWords.add(new Word("Seven", "kenekaku", R.drawable.number_seven, R.raw.number_seven));
+        miwokWords.add(new Word("Eight", "kawinta", R.drawable.number_eight, R.raw.number_eight));
+        miwokWords.add(new Word("Nine", "wo’e", R.drawable.number_nine, R.raw.number_nine));
+        miwokWords.add(new Word("Ten", "na’aacha", R.drawable.number_ten, R.raw.number_ten));
 
         // Locate root LinearLayout in word_list      // LinearLayout rootView = (LinearLayout) findViewById(R.id.rootView);
 

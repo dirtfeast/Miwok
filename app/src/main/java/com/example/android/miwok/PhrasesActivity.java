@@ -16,16 +16,16 @@ public class PhrasesActivity extends AppCompatActivity {
         // ArrayList of miwoWords objects
         // Define English and Miwok words
         ArrayList<Word> miwokWords = new ArrayList<Word>();
-        miwokWords.add(new Word("Where are you going?", "minto wuksus"));
-        miwokWords.add(new Word("What is your name?", "tinnә oyaase'nә"));
-        miwokWords.add(new Word("My name is...", "oyaaset..."));
-        miwokWords.add(new Word("How are you feeling?", "michәksәs?"));
-        miwokWords.add(new Word("I’m feeling good.", "kuchi achit"));
-        miwokWords.add(new Word("Are you coming?", "әәnәs'aa?"));
-        miwokWords.add(new Word("Yes, I’m coming.", "hәә’ әәnәm"));
-        miwokWords.add(new Word("I’m coming.", "әәnәm"));
-        miwokWords.add(new Word("Let’s go.", "yoowutis"));
-        miwokWords.add(new Word("Come here.", "әnni'nem"));
+        miwokWords.add(new Word("Where are you going?", "minto wuksus", R.raw.phrase_where_are_you_going));
+        miwokWords.add(new Word("What is your name?", "tinnә oyaase'nә", R.raw.phrase_what_is_your_name));
+        miwokWords.add(new Word("My name is...", "oyaaset...", R.raw.phrase_my_name_is));
+        miwokWords.add(new Word("How are you feeling?", "michәksәs?", R.raw.phrase_how_are_you_feeling));
+        miwokWords.add(new Word("I’m feeling good.", "kuchi achit", R.raw.phrase_im_feeling_good));
+        miwokWords.add(new Word("Are you coming?", "әәnәs'aa?", R.raw.phrase_are_you_coming));
+        miwokWords.add(new Word("Yes, I’m coming.", "hәә’ әәnәm", R.raw.phrase_yes_im_coming));
+        miwokWords.add(new Word("I’m coming.", "әәnәm", R.raw.phrase_im_coming));
+        miwokWords.add(new Word("Let’s go.", "yoowutis", R.raw.phrase_lets_go));
+        miwokWords.add(new Word("Come here.", "әnni'nem", R.raw.phrase_come_here));
 
         // Locate root LinearLayout in word_list
         // LinearLayout rootView = (LinearLayout) findViewById(R.id.rootView);
