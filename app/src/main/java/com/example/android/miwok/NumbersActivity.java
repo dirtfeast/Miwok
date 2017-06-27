@@ -21,7 +21,7 @@ public class NumbersActivity extends AppCompatActivity {
 
         // ArrayList of miwokWords objects
         // Define English and Miwok words
-        ArrayList<Word> miwokWords = new ArrayList<Word>();
+        final ArrayList<Word> miwokWords = new ArrayList<Word>();
         miwokWords.add(new Word("One", "lutti", R.drawable.number_one, R.raw.number_one));
         miwokWords.add(new Word("Two", "otiiko", R.drawable.number_two, R.raw.number_two));
         miwokWords.add(new Word("Three", "tolookosu", R.drawable.number_three, R.raw.number_three));
@@ -52,13 +52,17 @@ public class NumbersActivity extends AppCompatActivity {
         // ListView will display list items for each Word object in the list.
         listView.setAdapter(adapter);
 
+        // Set a click listener to play the audio when the list item is clicked on
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             // Implements interface, so I have to define the method
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+
+                // Get the {@link Word} object at the given position the user clicked on
+                Word word = miwokWords.get(position);
 
                 // MediaPlayer to play MP3 file onItemClick
-                mMediaPlayer = MediaPlayer.create(NumbersActivity.this, R.raw.number_one);
+                mMediaPlayer = MediaPlayer.create(NumbersActivity.this, word.getmRawResourceId());
                 mMediaPlayer.start();
 
                 // Toast: pass in context, message, int duration
