@@ -1,5 +1,6 @@
 package com.example.android.miwok;
 
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +11,8 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class NumbersActivity extends AppCompatActivity {
+
+    private MediaPlayer mMediaPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,9 +56,14 @@ public class NumbersActivity extends AppCompatActivity {
             @Override
             // Implements interface, so I have to define the method
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                // MediaPlayer to play MP3 file onItemClick
+                mMediaPlayer = MediaPlayer.create(NumbersActivity.this, R.raw.number_one);
+                mMediaPlayer.start();
+
                 // Toast: pass in context, message, int duration
                 // then call its show() method
-                Toast.makeText(NumbersActivity.this, "List item clicked", Toast.LENGTH_SHORT).show();
+                // Toast.makeText(NumbersActivity.this, "List item clicked", Toast.LENGTH_SHORT).show();
             } // Close method onItemClick()
 
         }); // Close method call listView.setOnClickListener()
