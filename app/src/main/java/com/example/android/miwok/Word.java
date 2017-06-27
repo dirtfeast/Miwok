@@ -8,7 +8,7 @@ public class Word {
     private int mRawResourceId;
 
     // Constructor setter method
-    // @params strings miwokWord and englishWord
+    // @params strings miwokWord and englishWord, int rawResourceId
     // Sets private strings mMiwokWord and mEnglishWord
     public Word(String miwokWord, String englishWord, int rawResourceId) {
         mMiwokWord = miwokWord;
@@ -16,6 +16,8 @@ public class Word {
         mRawResourceId = rawResourceId;
     } // Close method Word()
 
+    // Constructor setter method, overloaded
+    // Extra @param imageResourceId
     public Word(String miwokWord, String englishWord, int imageResourceId, int rawResourceId) {
         mMiwokWord = miwokWord;
         mEnglishWord = englishWord;
