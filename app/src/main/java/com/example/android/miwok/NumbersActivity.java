@@ -2,7 +2,10 @@ package com.example.android.miwok;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -13,7 +16,7 @@ public class NumbersActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.word_list);
 
-        // ArrayList of miwoWords objects
+        // ArrayList of miwokWords objects
         // Define English and Miwok words
         ArrayList<Word> miwokWords = new ArrayList<Word>();
         miwokWords.add(new Word("One", "lutti", R.drawable.number_one, R.raw.number_one));
@@ -45,6 +48,17 @@ public class NumbersActivity extends AppCompatActivity {
         // Make the ListView use the WordAdapter we created above, so that the
         // ListView will display list items for each Word object in the list.
         listView.setAdapter(adapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            // Implements interface, so I have to define the method
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                // Toast: pass in context, message, int duration
+                // then call its show() method
+                Toast.makeText(NumbersActivity.this, "List item clicked", Toast.LENGTH_SHORT).show();
+            } // Close method onItemClick()
+
+        }); // Close method call listView.setOnClickListener()
 
     } // Close method onCreate()
 } // Close class NumbersActivity
