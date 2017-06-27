@@ -1,21 +1,26 @@
 package com.example.android.miwok;
 
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
 
 public class PhrasesActivity extends AppCompatActivity {
 
+    private MediaPlayer mMediaPlayer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.word_list);
 
-        // ArrayList of miwoWords objects
+        // ArrayList of miwokWords objects
         // Define English and Miwok words
-        ArrayList<Word> miwokWords = new ArrayList<Word>();
+        final ArrayList<Word> miwokWords = new ArrayList<Word>();
         miwokWords.add(new Word("Where are you going?", "minto wuksus", R.raw.phrase_where_are_you_going));
         miwokWords.add(new Word("What is your name?", "tinnә oyaase'nә", R.raw.phrase_what_is_your_name));
         miwokWords.add(new Word("My name is...", "oyaaset...", R.raw.phrase_my_name_is));
@@ -47,5 +52,23 @@ public class PhrasesActivity extends AppCompatActivity {
         // ListView will display list items for each Word object in the list.
         listView.setAdapter(adapter);
 
+        // Set a click listener to play the audio when the list item is clicked on
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            // Implements interface, so I have to define the method
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+
+                // Get the {@link Word} object at the given position the user clicked on
+                Word word = miwokWords.get(position);
+
+                // MediaPlayer to play MP3 file onItemClick
+                mMediaPlayer = MediaPlayer.create(PhrasesActivity.this, word.getmRawResourceId());
+                mMediaPlayer.start();
+
+            } // Close method onItemClick()
+
+        }); // Close method call listView.setOnClickListener()
+
+
     } // Close method onCreate()
-} // Close class NumbersActivity
+} // Close class PhrasesActivity
