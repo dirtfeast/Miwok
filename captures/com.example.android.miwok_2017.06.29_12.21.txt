@@ -1,0 +1,50 @@
+Applications Memory Usage (kB):
+Uptime: 29464799 Realtime: 57949935
+
+** MEMINFO in pid 10143 [com.example.android.miwok] **
+                   Pss  Private  Private  Swapped     Heap     Heap     Heap
+                 Total    Dirty    Clean    Dirty     Size    Alloc     Free
+                ------   ------   ------   ------   ------   ------   ------
+  Native Heap     4208     4136        0        0     8704     5855     2848
+  Dalvik Heap     3382     3180        0        0    13574    12118     1456
+ Dalvik Other      605      464        0        0                           
+        Stack      140      140        0        0                           
+       Ashmem        2        0        0        0                           
+      Gfx dev     4262     4232        0        0                           
+    Other dev        4        0        4        0                           
+     .so mmap     1023      136      280        0                           
+    .apk mmap      161        0       12        0                           
+    .ttf mmap       61        0        0        0                           
+    .dex mmap     3544     3468       76        0                           
+    .oat mmap     1113        0      344        0                           
+    .art mmap      803      532        0        0                           
+   Other mmap       15        8        0        0                           
+   EGL mtrack    39040    39040        0        0                           
+      Unknown      168      168        0        0                           
+        TOTAL    58531    55504      716        0    22278    17973     4304
+ 
+ App Summary
+                       Pss(KB)
+                        ------
+           Java Heap:     3712
+         Native Heap:     4136
+                Code:     4316
+               Stack:      140
+            Graphics:    43272
+       Private Other:      644
+              System:     2311
+ 
+               TOTAL:    58531      TOTAL SWAP (KB):        0
+ 
+ Objects
+               Views:       86         ViewRootImpl:        2
+         AppContexts:        3           Activities:        2
+              Assets:        2        AssetManagers:        2
+       Local Binders:       11        Proxy Binders:       17
+       Parcel memory:        3         Parcel count:       14
+    Death Recipients:        0      OpenSSL Sockets:        0
+ 
+ SQL
+         MEMORY_USED:        0
+  PAGECACHE_OVERFLOW:        0          MALLOC_SIZE:        0
+ 

@@ -12,7 +12,17 @@ import java.util.ArrayList;
 
 public class NumbersActivity extends AppCompatActivity {
 
+    // Handles playback of mp3 files
     private MediaPlayer mMediaPlayer;
+
+    // Listener triggered upon completion of MediaPlayer mp3 file
+    private MediaPlayer.OnCompletionListener mCompletionListener = new MediaPlayer.OnCompletionListener() {
+        @Override
+        public void onCompletion(MediaPlayer mediaPlayer) {
+        // mp3 playback finished, release the media player resources
+        releaseMediaPlayer();
+            }
+        };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,18 +43,14 @@ public class NumbersActivity extends AppCompatActivity {
         miwokWords.add(new Word("Nine", "wo’e", R.drawable.number_nine, R.raw.number_nine));
         miwokWords.add(new Word("Ten", "na’aacha", R.drawable.number_ten, R.raw.number_ten));
 
-        // Locate root LinearLayout in word_list      // LinearLayout rootView = (LinearLayout) findViewById(R.id.rootView);
-
-        // Add sub TextView to the root LinearLayout for each element
         // ArrayAdapter manages view recycling
-        // Set text of each view
 
         // Custom WordAdapter class overrides ArrayAdapter
         // Pass context and object
         WordAdapter adapter = new WordAdapter(this, miwokWords, R.color.category_numbers);
 
         // Find the ListView object in the view hierarchy of the Activity
-        // There should be a {@link ListView} with the view ID called list,
+        // There should be a ListView with the view ID called list,
         // which is declared in the word_list.xml file
         ListView listView = (ListView) findViewById(R.id.list);
 
@@ -58,19 +64,43 @@ public class NumbersActivity extends AppCompatActivity {
             // Implements interface, so I have to define the method
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
 
-                // Get the {@link Word} object at the given position the user clicked on
+                // Release the media player if it currently exists because we are about to
+                // play a different sound file
+                releaseMediaPlayer();
+
+                // Get the Word object at the given position the user clicked on
                 Word word = miwokWords.get(position);
 
                 // MediaPlayer to play MP3 file onItemClick
                 mMediaPlayer = MediaPlayer.create(NumbersActivity.this, word.getmRawResourceId());
                 mMediaPlayer.start();
 
-                // Toast: pass in context, message, int duration
-                // then call its show() method
-                // Toast.makeText(NumbersActivity.this, "List item clicked", Toast.LENGTH_SHORT).show();
-            } // Close method onItemClick()
+                mMediaPlayer.setOnCompletionListener(mCompletionListener);
+
+        // Toast: pass in context, message, int duration
+        // then call its show() method
+        // Toast.makeText(NumbersActivity.this, "List item clicked", Toast.LENGTH_SHORT).show();
+        } // Close method onItemClick()
 
         }); // Close method call listView.setOnClickListener()
 
     } // Close method onCreate()
+
+    /**
+     * Clean up the media player by releasing its resources.
+     */
+    private void releaseMediaPlayer() {
+        // If the media player is not null, then it may be currently playing a sound.
+        if (mMediaPlayer != null) {
+            // Regardless of the current state of the media player, release its resources
+            // because we no longer need it.
+            mMediaPlayer.release();
+
+            // Set the media player back to null. For our code, we've decided that
+            // setting the media player to null is an easy way to tell that the media player
+            // is not configured to play an audio file at the moment.
+            mMediaPlayer = null;
+        } // Close if
+    } // Close method releaseMediaPlayer()
+
 } // Close class NumbersActivity

@@ -1,0 +1,139 @@
+CURRENT STATS:
+Per-Package Stats:
+  * com.example.android.miwok / u0a112 / v1:
+      * com.example.android.miwok / u0a112 / v1:
+               TOTAL: 22% (32MB-45MB-57MB/30MB-43MB-55MB over 2)
+                 Top: 22% (32MB-45MB-57MB/30MB-43MB-55MB over 2)
+            (Cached): 74%
+
+Summary:
+  * com.example.android.miwok / u0a112 / v1:
+           TOTAL: 22% (32MB-45MB-57MB/30MB-43MB-55MB over 2)
+             Top: 22% (32MB-45MB-57MB/30MB-43MB-55MB over 2)
+        (Cached): 74%
+
+Run time Stats:
+  SOn /Norm: +7m21s469ms (running)
+      TOTAL: +7m21s469ms
+
+Memory usage:
+  Top    : 58MB (14 samples)
+  ImpFg  : 83MB (27 samples)
+  ImpBg  : 1.1MB (6 samples)
+  Service: 87MB (42 samples)
+  Receivr: 17KB (27 samples)
+  Home   : 8.3MB (1 samples)
+  LastAct: 93MB (2 samples)
+  CchEmty: 172MB (19 samples)
+  TOTAL  : 502MB
+
+          Start time: 2017-06-29 12:14:56
+  Total elapsed time: +7m21s477ms (partial) libart.so
+
+AGGREGATED OVER LAST 24 HOURS:
+System memory usage:
+  SOff/Norm: 7 samples:
+    Cached: 351MB min, 459MB avg, 625MB max
+    Free: 94MB min, 282MB avg, 413MB max
+    ZRam: 0.00 min, 0.00 avg, 0.00 max
+    Kernel: 80MB min, 91MB avg, 99MB max
+    Native: 54MB min, 57MB avg, 68MB max
+  SOn /Norm: 4 samples:
+    Cached: 510MB min, 648MB avg, 829MB max
+    Free: 69MB min, 114MB avg, 242MB max
+    ZRam: 0.00 min, 0.00 avg, 0.00 max
+    Kernel: 76MB min, 84MB avg, 97MB max
+    Native: 53MB min, 60MB avg, 67MB max
+
+Per-Package Stats:
+  * com.example.android.miwok / u0a112 / v1:
+      * com.example.android.miwok / u0a112 / v1:
+               TOTAL: 0.58% (32MB-49MB-57MB/30MB-47MB-55MB over 3)
+                 Top: 0.58% (32MB-49MB-57MB/30MB-47MB-55MB over 3)
+            (Cached): 2.3% (27MB-27MB-27MB/25MB-25MB-25MB over 1)
+
+Summary:
+  * com.example.android.miwok / u0a112 / v1:
+           TOTAL: 0.58% (32MB-49MB-57MB/30MB-47MB-55MB over 3)
+             Top: 0.58% (32MB-49MB-57MB/30MB-47MB-55MB over 3)
+        (Cached): 2.3% (27MB-27MB-27MB/25MB-25MB-25MB over 1)
+
+Run time Stats:
+  SOff/Norm: +5h31m17s132ms
+  SOn /Norm: +3h53m31s793ms
+      TOTAL: +9h24m48s925ms
+
+Memory usage:
+  Kernel : 88MB (77 samples)
+  Native : 58MB (77 samples)
+  Persist: 215MB (250 samples)
+  Top    : 117MB (717 samples)
+  ImpFg  : 80MB (1311 samples)
+  ImpBg  : 26MB (905 samples)
+  Service: 105MB (3412 samples)
+  Receivr: 138KB (2203 samples)
+  Home   : 8.3MB (19 samples)
+  LastAct: 40MB (36 samples)
+  CchAct : 155KB (60 samples)
+  CchCAct: 520KB (64 samples)
+  CchEmty: 235MB (1655 samples)
+  Cached : 537MB (77 samples)
+  Free   : 213MB (77 samples)
+  TOTAL  : 1.7GB
+  ServRst: 6.0KB (1590 samples)
+
+          Start time: 2017-06-28 02:23:58
+  Total elapsed time: +23h10m41s252ms (partial) libart.so
+
+AGGREGATED OVER LAST 3 HOURS:
+System memory usage:
+  SOff/Norm: 3 samples:
+    Cached: 351MB min, 490MB avg, 625MB max
+    Free: 148MB min, 277MB avg, 388MB max
+    ZRam: 0.00 min, 0.00 avg, 0.00 max
+    Kernel: 91MB min, 96MB avg, 99MB max
+    Native: 54MB min, 55MB avg, 56MB max
+  SOn /Norm: 1 samples:
+    Cached: 510MB min, 510MB avg, 510MB max
+    Free: 242MB min, 242MB avg, 242MB max
+    ZRam: 0.00 min, 0.00 avg, 0.00 max
+    Kernel: 97MB min, 97MB avg, 97MB max
+    Native: 55MB min, 55MB avg, 55MB max
+
+Per-Package Stats:
+  * com.example.android.miwok / u0a112 / v1:
+      * com.example.android.miwok / u0a112 / v1:
+               TOTAL: 1.7% (32MB-49MB-57MB/30MB-47MB-55MB over 3)
+                 Top: 1.7% (32MB-49MB-57MB/30MB-47MB-55MB over 3)
+            (Cached): 7.0% (27MB-27MB-27MB/25MB-25MB-25MB over 1)
+
+Summary:
+  * com.example.android.miwok / u0a112 / v1:
+           TOTAL: 1.7% (32MB-49MB-57MB/30MB-47MB-55MB over 3)
+             Top: 1.7% (32MB-49MB-57MB/30MB-47MB-55MB over 3)
+        (Cached): 7.0% (27MB-27MB-27MB/25MB-25MB-25MB over 1)
+
+Run time Stats:
+  SOff/Norm: +47m17s470ms
+  SOn /Norm: +2h22m3s454ms
+      TOTAL: +3h9m20s924ms
+
+Memory usage:
+  Kernel : 96MB (31 samples)
+  Native : 55MB (31 samples)
+  Persist: 218MB (90 samples)
+  Top    : 96MB (248 samples)
+  ImpFg  : 92MB (463 samples)
+  ImpBg  : 41MB (527 samples)
+  Service: 126MB (1027 samples)
+  Receivr: 22KB (441 samples)
+  Home   : 5.6MB (7 samples)
+  LastAct: 94MB (24 samples)
+  CchEmty: 214MB (509 samples)
+  Cached : 494MB (31 samples)
+  Free   : 270MB (31 samples)
+  TOTAL  : 1.8GB
+  ServRst: 336 (31 samples)
+
+          Start time: 2017-06-29 09:12:24
+  Total elapsed time: +3h9m54s327ms (partial) libart.so

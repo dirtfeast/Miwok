@@ -13,6 +13,15 @@ public class PhrasesActivity extends AppCompatActivity {
 
     private MediaPlayer mMediaPlayer;
 
+    // Listener triggered upon completion of MediaPlayer mp3 file
+    private MediaPlayer.OnCompletionListener mCompletionListener = new MediaPlayer.OnCompletionListener() {
+        @Override
+        public void onCompletion(MediaPlayer mediaPlayer) {
+            // mp3 playback finished, release the media player resources
+            releaseMediaPlayer();
+        }
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,12 +41,6 @@ public class PhrasesActivity extends AppCompatActivity {
         miwokWords.add(new Word("Let’s go.", "yoowutis", R.raw.phrase_lets_go));
         miwokWords.add(new Word("Come here.", "әnni'nem", R.raw.phrase_come_here));
 
-        // Locate root LinearLayout in word_list
-        // LinearLayout rootView = (LinearLayout) findViewById(R.id.rootView);
-
-        // Add sub TextView to the root LinearLayout for each element
-        // ArrayAdapter manages view recycling
-        // Set text of each view
 
         // Custom WordAdapter class overrides ArrayAdapter
         // Pass context and object
@@ -58,12 +61,17 @@ public class PhrasesActivity extends AppCompatActivity {
             // Implements interface, so I have to define the method
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
 
+                // Release the media player if it currently exists because we are about to
+                // play a different sound file
+                releaseMediaPlayer();
+
                 // Get the {@link Word} object at the given position the user clicked on
                 Word word = miwokWords.get(position);
 
                 // MediaPlayer to play MP3 file onItemClick
                 mMediaPlayer = MediaPlayer.create(PhrasesActivity.this, word.getmRawResourceId());
                 mMediaPlayer.start();
+                mMediaPlayer.setOnCompletionListener(mCompletionListener);
 
             } // Close method onItemClick()
 
@@ -71,4 +79,22 @@ public class PhrasesActivity extends AppCompatActivity {
 
 
     } // Close method onCreate()
+
+    /**
+     * Clean up the media player by releasing its resources.
+     */
+    private void releaseMediaPlayer() {
+        // If the media player is not null, then it may be currently playing a sound.
+        if (mMediaPlayer != null) {
+            // Regardless of the current state of the media player, release its resources
+            // because we no longer need it.
+            mMediaPlayer.release();
+
+            // Set the media player back to null. For our code, we've decided that
+            // setting the media player to null is an easy way to tell that the media player
+            // is not configured to play an audio file at the moment.
+            mMediaPlayer = null;
+        } // Close if
+    } // Close method releaseMediaPlayer()
+
 } // Close class PhrasesActivity
