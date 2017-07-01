@@ -19,7 +19,7 @@ public class PhrasesActivity extends AppCompatActivity {
     // Object to invoke audio focus gain and release
     private AudioManager mAudioManager;
 
-    // Object to track audio focus changes
+    // Listener object to track audio focus changes
     private AudioManager.OnAudioFocusChangeListener mOnAudioFocusChangeListener = new AudioManager.OnAudioFocusChangeListener() {
         @Override
         public void onAudioFocusChange(int focusChange) {
