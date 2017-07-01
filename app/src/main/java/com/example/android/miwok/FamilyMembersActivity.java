@@ -80,6 +80,12 @@ public class FamilyMembersActivity extends AppCompatActivity {
 
     } // Close method onCreate()
 
+    @Override
+    protected void onStop() {
+        super.onStop();
+        releaseMediaPlayer();
+    } // Closed override method onStop()
+
     /**
      * Clean up the media player by releasing its resources.
      */
