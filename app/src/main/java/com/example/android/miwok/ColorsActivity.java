@@ -1,5 +1,7 @@
 package com.example.android.miwok;
 
+import android.content.Context;
+import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,21 +13,42 @@ import java.util.ArrayList;
 
 public class ColorsActivity extends AppCompatActivity {
 
+    // Object to handle playback of mp3 files
     private MediaPlayer mMediaPlayer;
 
-    // Listener triggered upon completion of MediaPlayer mp3 file
+    // Object to invoke audio focus gain and release
+    private AudioManager mAudioManager;
+
+    // Object to track audio focus changes
+    private AudioManager.OnAudioFocusChangeListener mOnAudioFocusChangeListener = new AudioManager.OnAudioFocusChangeListener() {
+        @Override
+        public void onAudioFocusChange(int focusChange) {
+            if(focusChange == AudioManager.AUDIOFOCUS_LOSS || focusChange == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK) {
+                mMediaPlayer.pause();
+                mMediaPlayer.seekTo(0);
+            } else if (focusChange == AudioManager.AUDIOFOCUS_GAIN){
+                mMediaPlayer.start();
+            } else if (focusChange == AudioManager.AUDIOFOCUS_LOSS) {
+                releaseMediaPlayer();
+            } // Close if
+        } // Close method override onAudioFocusChange()
+    }; // Close method AudioManager.OnAudioFocusChangeListener()
+
+    // Listener object triggered upon completion of MediaPlayer mp3 file
     private MediaPlayer.OnCompletionListener mCompletionListener = new MediaPlayer.OnCompletionListener() {
         @Override
-        public void onCompletion(MediaPlayer mediaPlayer) {
-            // mp3 playback finished, release the media player resources
-            releaseMediaPlayer();
-        }
-    };
+        public void onCompletion(MediaPlayer mediaPlayer)
+        // mp3 playback finished, release the media player resources, abandon audio focus
+        {releaseMediaPlayer();} // Close method override onCompletion()
+    }; // Close method  MediaPlayer.OnCompletionListener()
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.word_list);
+
+        // Request Audio Focus and register OnAudioFocusChangeListener
+        mAudioManager = (AudioManager)getSystemService(Context.AUDIO_SERVICE);
 
         // ArrayList of miwokWords objects
         // Define English and Miwok words
@@ -58,18 +81,25 @@ public class ColorsActivity extends AppCompatActivity {
             // Implements interface, so I have to define the method
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
 
+                // Get the {@link Word} object at the given position the user clicked on
+                Word word = miwokWords.get(position);
+
                 // Release the media player if it currently exists because we are about to
                 // play a different sound file
                 releaseMediaPlayer();
 
-                // Get the {@link Word} object at the given position the user clicked on
-                Word word = miwokWords.get(position);
+                // Request audio focus for playback
+                int result = mAudioManager.requestAudioFocus(mOnAudioFocusChangeListener,
+                        AudioManager.STREAM_MUSIC,
+                        AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);
 
-                // MediaPlayer to play MP3 file onItemClick
-                mMediaPlayer = MediaPlayer.create(ColorsActivity.this, word.getmRawResourceId());
-                mMediaPlayer.start();
-
-                mMediaPlayer.setOnCompletionListener(mCompletionListener);
+                // if audio focus granted
+                if (result == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
+                    // MediaPlayer to play MP3 file onItemClick
+                    mMediaPlayer = MediaPlayer.create(ColorsActivity.this, word.getmRawResourceId());
+                    mMediaPlayer.start();
+                    mMediaPlayer.setOnCompletionListener(mCompletionListener);
+                } // Close if
 
             } // Close method onItemClick()
 
@@ -81,23 +111,15 @@ public class ColorsActivity extends AppCompatActivity {
     protected void onStop() {
         super.onStop();
         releaseMediaPlayer();
-    } // Closed override method onStop()
+    } // Close override method onStop()
 
-
-    /**
-     * Clean up the media player by releasing its resources.
-     */
+    // Clean up the media player
+    // Release resources, set to null, abandon audio focus
     private void releaseMediaPlayer() {
-        // If the media player is not null, then it may be currently playing a sound.
         if (mMediaPlayer != null) {
-            // Regardless of the current state of the media player, release its resources
-            // because we no longer need it.
             mMediaPlayer.release();
-
-            // Set the media player back to null. For our code, we've decided that
-            // setting the media player to null is an easy way to tell that the media player
-            // is not configured to play an audio file at the moment.
             mMediaPlayer = null;
+            mAudioManager.abandonAudioFocus(mOnAudioFocusChangeListener);
         } // Close if
     } // Close method releaseMediaPlayer()
 
