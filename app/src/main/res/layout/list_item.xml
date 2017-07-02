@@ -7,14 +7,12 @@
     android:layout_width="match_parent"
     android:layout_height="@dimen/list_item_height"
     android:background="@color/tan_background"
-    android:minHeight="@dimen/list_item_height"
-    >
+    android:minHeight="@dimen/list_item_height" >
 
     <ImageView
         android:id="@+id/list_item_icon"
         android:layout_width="@dimen/list_item_width"
-        android:layout_height="@dimen/list_item_height"
-        />
+        android:layout_height="@dimen/list_item_height" />
 
     <RelativeLayout
         android:id="@+id/category_color"
@@ -25,8 +23,7 @@
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@id/list_item_icon"
         android:orientation="vertical"
-        android:paddingLeft="16dp"
-        >
+        android:paddingLeft="16dp" >
 
         <TextView
             android:id="@+id/word_miwok"
@@ -56,8 +53,7 @@
             android:layout_marginRight="16dp"
             android:src="@drawable/ic_play_white"
             android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            />
+            android:layout_centerVertical="true" />
 
     </RelativeLayout>
 
