@@ -1,52 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!-- Layout for a single list item -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tool="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="@dimen/list_item_height"
     android:background="@color/tan_background"
-    android:orientation="horizontal">
+    android:minHeight="@dimen/list_item_height"
+    >
 
     <ImageView
         android:id="@+id/list_item_icon"
-        android:layout_width="@dimen/list_item_height"
+        android:layout_width="@dimen/list_item_width"
         android:layout_height="@dimen/list_item_height"
-        android:background="@color/tan_background" />
+        />
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/category_color"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="@dimen/list_item_height"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@id/list_item_icon"
         android:orientation="vertical"
-        android:layout_weight="4"
+        android:paddingLeft="16dp"
         >
 
         <TextView
             android:id="@+id/word_miwok"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
             android:layout_weight="1"
+            android:layout_height="44dp"
             android:gravity="bottom"
-            android:paddingLeft="16dp"
             android:textAppearance="?android:textAppearanceMedium"
             android:textColor="@android:color/white"
-            android:textSize="18sp"
             android:textStyle="bold"
             tool:text="Miwok" />
 
         <TextView
             android:id="@+id/word_english"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="44dp"
             android:layout_weight="1"
             android:gravity="top"
-            android:paddingLeft="16dp"
+            android:layout_below="@id/word_miwok"
             android:textAppearance="?android:textAppearanceMedium"
             android:textColor="@android:color/white"
-            android:textSize="18sp"
             tool:text="English" />
 
-    </LinearLayout>
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginRight="16dp"
+            android:src="@drawable/ic_play_white"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            />
 
-</LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>
